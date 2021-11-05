@@ -1,0 +1,18 @@
+include _productCard
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/styles/style.css")
+        title Document
+    body 
+        include _header
+        #product-container.mx-auto.grid.grid-cols-3.gap-4(class='w-8/12')
+           each item in products 
+                +productCard(item)
+            
+        include _footer
+        include _script

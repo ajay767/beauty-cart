@@ -1,0 +1,23 @@
+include _summaryProductCard
+include _invoice
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/styles/style.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
+        title Document
+    body 
+        include _header
+        .mx-auto.mb-20.grid.grid-cols-3
+            .col-start-2
+                .flex.items-center.justify-center
+                    lottie-player(src='https://assets4.lottiefiles.com/packages/lf20_qy1x5u5t.json' background='transparent' speed='1' style='width: 300px; height: 300px' autoplay=true)
+                .text-2xl.text-center Your order has been placed successfully!!
+                a(href="/").p-3.px-6.my-4.rounded-md.bg-green-500.text-sm.text-center.block.mx-auto.w-max.text-white Shop More
+            +invoiceReceipt(data, id)
+        include _footer
+        include _script

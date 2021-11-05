@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    />
+    <link rel="stylesheet" href="./public/styles/utils.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="border-b border-gray-100">
+      <header class="p-4 flex items-center w-10/12 mx-auto">
+        <h1 class="text-lg font-bold flex-grow">
+          Beauty <span class="text-yellow-500">Cart</span>
+        </h1>
+        <div class="flex w-72 items-center justify-between text-gray-600">
+          <p class="text-sm mr-2">Home</p>
+          <p class="text-sm mr-2">Products</p>
+          <p class="text-sm mr-2">Contact us</p>
+          <p class="text-sm">About us</p>
+        </div>
+      </header>
+    </div>
+    <div class="w-10/12 mx-auto py-4">
+      <p class="text-sm text-gray-500 flex items-center">
+        <img class="w-4 mr-2" src="./public/images/back.png" />
+        Back to products
+      </p>
+      <div class="mt-10 grid grid-cols-10 gap-4 items-start container-checkout">
+        <div class="col-span-6 h-full overflow-y-auto scrollbar-hide">
+          <p class="flex items-center">
+            <span
+              class="
+                h-7
+                w-7
+                text-sm
+                rounded-full
+                bg-gray-800
+                text-white
+                flex
+                items-center
+                justify-center
+                mr-2
+              "
+              >1</span
+            >
+            Personal Details
+          </p>
+
+          <div class="p-4 my-4 grid grid-cols-2 gap-4">
+            <div class="flex flex-col justify-start">
+              <label class="text-sm mb-2 text-gray-500">First Name</label>
+              <input
+                type="text"
+                class="
+                  rounded-md
+                  p-2
+                  ring-1 ring-gray-400
+                  focus:ring-2 focus:ring-blue-500
+                "
+              />
+            </div>
+            <div class="flex flex-col justify-start">
+              <label
+                class="
+                  text-sm
+                  mb-2
+                  text-gray-500
+                  flex
+                  items-center
+                  justify-between
+                "
+                >Last Name
+                <span class="text-right text-red-500 ml-auto"
+                  >Invalid input</span
+                ></label
+              >
+              <input type="text" class="rounded-md p-2 ring-1 ring-gray-400" />
+            </div>
+            <div class="flex flex-col justify-start">
+              <label class="text-sm mb-2 text-gray-500">Mobile</label>
+              <input type="tel" class="rounded-md p-2 ring-1 ring-gray-400" />
+            </div>
+            <div class="flex flex-col justify-start">
+              <label class="text-sm mb-2 text-gray-500">Email</label>
+              <input type="email" class="rounded-md p-2 ring-1 ring-gray-400" />
+            </div>
+            <div class="flex flex-col justify-start col-span-full">
+              <label class="text-sm mb-2 text-gray-500">Address</label>
+              <textarea
+                type="email"
+                class="rounded-md p-2 ring-1 ring-gray-400"
+              ></textarea>
+            </div>
+            <div class="flex flex-col justify-start">
+              <label class="text-sm mb-2 text-gray-500">City</label>
+              <input type="text" class="rounded-md p-2 ring-1 ring-gray-400" />
+            </div>
+            <div class="flex flex-col justify-start">
+              <label class="text-sm mb-2 text-gray-500">Province</label>
+              <input type="text" class="rounded-md p-2 ring-1 ring-gray-400" />
+            </div>
+          </div>
+          <p class="flex items-center">
+            <span
+              class="
+                h-7
+                w-7
+                text-sm
+                rounded-full
+                bg-gray-800
+                text-white
+                flex
+                items-center
+                justify-center
+                mr-2
+              "
+              >2</span
+            >
+            Payment
+          </p>
+          <div class="grid grid-cols-2 gap-4 my-4 p-4">
+            <div class="flex flex-col justify-start col-span-full">
+              <label class="text-sm mb-2 text-gray-500">Full Name</label>
+              <input type="text" class="rounded-md p-2 ring-1 ring-gray-400" />
+            </div>
+            <div class="flex flex-col justify-start">
+              <label class="text-sm mb-2 text-gray-500">Card Number</label>
+              <input type="text" class="rounded-md p-2 ring-1 ring-gray-400" />
+            </div>
+            <div class="flex flex-col justify-start">
+              <label class="text-sm mb-2 text-gray-500">Expiry Date</label>
+              <input type="text" class="rounded-md p-2 ring-1 ring-gray-400" />
+            </div>
+            <div class="flex flex-col justify-start">
+              <label class="text-sm mb-2 text-gray-500">CVV</label>
+              <input type="text" class="rounded-md p-2 ring-1 ring-gray-400" />
+            </div>
+            <div class="flex flex-col justify-start">
+              <label
+                class="
+                  text-sm
+                  mb-2
+                  flex
+                  items-center
+                  justify-between
+                  text-gray-500
+                "
+                id="postalCode-label"
+                >Postal Code</label
+              >
+              <input
+                type="text"
+                class="rounded-md p-2 text-sm ring-1 ring-gray-400"
+                id="postalCode-input"
+              />
+            </div>
+            <button
+              id="place-order-button"
+              class="
+                mt-10
+                p-4
+                col-span-full
+                rounded-md
+                text-white
+                w-full
+                text-sm
+                bg-green-600
+                text-center
+              "
+            >
+              Place Order
+            </button>
+          </div>
+        </div>
+        <div
+          class="
+            col-span-4
+            bg-gray-50
+            ring-1 ring-gray-100
+            w-full
+            rounded-md
+            p-4
+            my-4
+            h-max
+          "
+        >
+          <div>
+            <p class="text-sm text-gray-800 font-medium mb-4">Order summary</p>
+          </div>
+          <div class="flex items-start">
+            <img
+              src="./public/images/girl-kurti.webp"
+              class="h-24 rounded-md"
+            />
+            <div class="ml-4">
+              <h2 class="text-sm font-medium text-gray-700">
+                Gujrati festival kurti
+              </h2>
+              <p class="text-lg font-bold text-gray-700">$ 450</p>
+              <p
+                class="
+                  text-xs text-gray-500
+                  flex
+                  items-center
+                  justify-between
+                  w-20
+                  my-2
+                "
+              >
+                <span
+                  class="
+                    text-sm
+                    h-6
+                    w-6
+                    flex
+                    items-center
+                    justify-center
+                    bg-gray-200
+                    ring-1 ring-gray-50
+                    rounded-full
+                  "
+                  ><img class="h-3 w-3" src="./public/images/minus.png" /></span
+                >2
+                <span
+                  class="
+                    text-sm
+                    h-6
+                    w-6
+                    flex
+                    items-center
+                    justify-center
+                    bg-gray-200
+                    ring-1 ring-gray-50
+                    rounded-full
+                  "
+                  ><img class="h-3 w-3" src="./public/images/plus.png"
+                /></span>
+              </p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <p class="text-sm text-gray-800 font-medium mb-2">
+              Invoice Details
+            </p>
+            <div>
+              <div class="grid grid-cols-2 text-sm text-gray-800">
+                <span>Total Amount</span>
+                <span class="font-bold text-right">$ 55</span>
+              </div>
+              <div class="grid grid-cols-2 text-sm text-gray-800">
+                <span>Service & Tax Fee</span>
+                <span class="font-bold text-right">$ 3</span>
+              </div>
+              <hr class="border-dashed border-gray-500 my-2" />
+              <div class="grid grid-cols-2 mb-2 text-sm text-gray-800">
+                <span>Payble amount</span>
+                <span class="font-bold text-right">$ 3</span>
+              </div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <p class="text-sm text-gray-800 font-medium mb-2">Bill To</p>
+            <div class="grid grid-cols-2 text-sm text-gray-800">
+              <span>Name</span>
+              <span class="font-medium text-right">Ajay yadav</span>
+            </div>
+            <div class="grid grid-cols-2 text-sm text-gray-800">
+              <span>Email</span>
+              <span class="font-medium text-right">aju@gmail.com</span>
+            </div>
+            <div class="grid grid-cols-2 text-sm text-gray-800">
+              <span>Mobile</span>
+              <span class="font-medium text-right">7879994998</span>
+            </div>
+            <div class="grid grid-cols-2 text-sm text-gray-800">
+              <span>Address</span>
+              <span class="font-medium text-right">pragati vihar colony</span>
+            </div>
+            <div class="grid grid-cols-2 text-sm text-gray-800">
+              <span>city</span>
+              <span class="font-medium text-right">Delhi</span>
+            </div>
+            <div class="grid grid-cols-2 text-sm text-gray-800">
+              <span>Province</span>
+              <span class="font-medium text-right">canada</span>
+            </div>
+          </div>
+          <div class="">
+            <p class="text-xs text-gray-700">About Delivery Partner</p>
+            <p class="text-xs text-gray-500">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="border-t border-gray-100 mt-10 p-4 text-xs">
+      <div class="w-10/12 mx-auto">
+        <p class="text-right text-gray-500 mb-2">
+          <span class="mr-4">Home</span>
+          <span class="mr-4">About</span>
+          <span class="">Contact us</span>
+        </p>
+        <p class="text-right text-gray-400">&copy; 2021 Beauty cart</p>
+      </div>
+    </footer>
+  </body>
+  <script defer src="./public/js/alert.js"></script>
+  <script>
+    const submitBtn = document.getElementById("place-order-button");
+
+    function validateField(identifier, message) {
+      const input = document.getElementById(`${identifier}-input`);
+      const label = document.getElementById(`${identifier}-label`);
+      const errorMessage = `<span id="form-error" class="text-right text-red-500 ml-auto">${message}</span>`;
+      if (label.childNodes.length >= 2) {
+        console.log(label.childNodes);
+        label.removeChild(label.lastElementChild);
+      }
+      label.insertAdjacentHTML("beforeend", errorMessage);
+    }
+    submitBtn.addEventListener("click", () => {
+      validateField("postalCode", "Invalid postal code");
+    });
+  </script>
+</html>

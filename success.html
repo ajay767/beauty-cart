@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="border-b border-gray-100 mb-10">
+      <header class="p-4 flex items-center w-10/12 mx-auto">
+        <h1 class="text-lg font-bold flex-grow">
+          Beauty <span class="text-yellow-500">Cart</span>
+        </h1>
+        <div class="flex w-96 items-center justify-between text-gray-600">
+          <p class="text-sm mr-4">Home</p>
+          <p class="text-sm mr-4">Products</p>
+          <p class="text-sm mr-4">Contact us</p>
+          <p class="text-sm mr-4">About us</p>
+          <div class="relative">
+            <span
+              class="
+                h-4
+                w-4
+                rounded-full
+                bg-red-500
+                text-white text-xs
+                flex
+                items-center
+                justify-center
+                absolute
+                -top-2
+                -right-2
+              "
+              >3</span
+            >
+            <img src="./public/images/bag.png" alt="cart" class="w-5" />
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="mx-auto mb-20 grid grid-cols-3">
+      <div class="col-start-2">
+        <div class="flex items-center justify-center">
+          <lottie-player
+            src="https://assets4.lottiefiles.com/packages/lf20_qy1x5u5t.json"
+            background="transparent"
+            speed="1"
+            style="width: 300px; height: 300px"
+            autoplay
+          ></lottie-player>
+        </div>
+        <p class="text-gray-800 text-center text-xl">
+          Your order has been placed successfully!
+        </p>
+      </div>
+      <div
+        class="
+          col-start-3
+          bg-white
+          border border-gray-50
+          shadow-sm
+          mx-auto
+          rounded-t-md
+          p-5
+        "
+      >
+        <h1 class="text-sm font-bold flex-grow">
+          Beauty <span class="text-yellow-500">Cart</span>
+        </h1>
+        <p class="text-base font-medium my-4">Your order is confirmed!</p>
+        <p class="text-sm">Hello Ajay,</p>
+        <p class="text-xs text-gray-400">
+          Your order has been confirmed and will be shipped right away.
+        </p>
+
+        <div class="my-4 bg-gray-100 rounded p-4">
+          <div class="mb-4">
+            <p class="text-xs">Delivery is scheduled to</p>
+            <h4 class="text-sm font-medium">
+              Thursday, 21 May - Friday, 22 May
+            </h4>
+          </div>
+          <div>
+            <p class="text-xs">Shipping method</p>
+            <h4 class="text-sm font-medium">Standard</h4>
+          </div>
+        </div>
+
+        <div class="my-4">
+          <p class="text-sm">Order Details</p>
+          <p class="text-xs text-gray-400">Order ID <span>dshdj676dds</span></p>
+        </div>
+
+        <div>
+          <div class="flex items-start space-x-2 mb-2">
+            <img
+              src="./public/images/men-tee-4.webp"
+              class="h-16 w-16 rounded-md object-cover"
+            />
+            <div>
+              <p class="text-sm">Men's summer tee</p>
+              <p class="text-sm font-bold">$ 5</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-2 mb-2">
+            <img
+              src="./public/images/men-tee.webp"
+              class="h-16 w-16 rounded-md object-cover"
+            />
+            <div>
+              <p class="text-sm">Men's summer tee</p>
+              <p class="text-sm font-bold">$ 5</p>
+            </div>
+          </div>
+          <div class="my-4">
+            <div class="grid grid-cols-2 text-sm text-gray-800">
+              <span>Total Amount</span>
+              <span class="font-medium text-right">$ 55</span>
+            </div>
+            <div class="grid grid-cols-2 text-sm text-gray-800">
+              <span>Service & Tax Fee</span>
+              <span class="font-medium text-right">$ 3</span>
+            </div>
+            <hr class="border-dashed border-gray-500 my-2" />
+            <div class="grid grid-cols-2 mb-2 text-sm text-gray-800">
+              <span>Payble amount</span>
+              <span class="font-medium text-right">$ 3</span>
+            </div>
+          </div>
+          <button class="p-3 rounded-sm w-full bg-green-500 text-white text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="mt-4">
+          <p class="text-xs font-medium">Thanks for shopping!</p>
+          <p class="text-xs text-gray-400">Hope you come back soon</p>
+          <p class="text-xs">
+            Beauty<span class="text-yellow-500">Cart</span>.org
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer class="border-t bg-white border-gray-100 p-4 text-xs">
+      <div class="w-10/12 mx-auto">
+        <p class="text-right text-gray-500 mb-2">
+          <span class="mr-4">Home</span>
+          <span class="mr-4">About</span>
+          <span class="">Contact us</span>
+        </p>
+        <p class="text-right text-gray-400">&copy; 2021 Beauty cart</p>
+      </div>
+    </footer>
+  </body>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script>
+    localStorage.setItem("products", 3);
+  </script>
+</html>

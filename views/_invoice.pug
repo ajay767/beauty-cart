@@ -1,0 +1,50 @@
+mixin invoiceReceipt(data, id)
+    .col-start-3.bg-white.border.border-gray-50.shadow-sm.mx-auto.rounded-t-md.p-5
+        h1.text-sm.font-bold.flex-grow
+            | Beauty 
+            span.text-yellow-500 Cart
+        p.text-base.font-medium.my-4 Your order is confirmed!
+        p.text-sm= ` Hello ${data.user.firstName},`
+        p.text-xs.text-gray-400
+            | Your order has been confirmed and will be shipped right away.
+        .my-4.bg-gray-100.rounded.p-4
+            .mb-4
+            p.text-xs Delivery is scheduled to
+            h4.text-sm.font-medium
+                | Thursday, 21 May - Friday, 22 May
+            div
+            p.text-xs Shipping method
+            h4.text-sm.font-medium Standard
+        .my-4
+            p.text-sm Order Details
+            p.text-xs.text-gray-400
+                | Order ID 
+                span= id
+        div
+            each item in data.cart 
+                .flex.items-start.space-x-2.mb-2
+                    img.h-16.w-16.rounded-md.object-cover(src=`${item.photo}`)
+                    div
+                        p.text-sm= item.title
+                        p.text-sm.font-bold= `$ ${item.price}`
+           
+            .my-4
+            .grid.grid-cols-2.text-sm.text-gray-800
+                span Total Amount
+                span.font-medium.text-right= data.totalAmount
+            .grid.grid-cols-2.text-sm.text-gray-800
+                span Service &amp; Tax Fee
+                span.font-medium.text-right= data.totalTax
+            hr.border-dashed.border-gray-500.my-2
+            .grid.grid-cols-2.mb-2.text-sm.text-gray-800
+                span Payble amount
+                span.font-medium.text-right= data.totalPayble
+            button#receipt-download-btn.p-3.rounded-sm.w-full.bg-green-500.text-white.text-sm
+                | Download
+        .mt-4
+            p.text-xs.font-medium Thanks for shopping!
+            p.text-xs.text-gray-400 Hope you come back soon
+            p.text-xs
+                | Beauty
+                span.text-yellow-500 Cart
+                | .org

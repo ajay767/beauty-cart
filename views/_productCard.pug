@@ -1,0 +1,14 @@
+mixin productCard(product)
+    .w-52.rounded-md.m-4.cursor-pointer
+        .relative.rounded-md.overflow-hidden.mb-2
+            img.w-full.h-full(src=`${product.photo}` alt=`${product.id}`)
+            span.block.p-1.px-4.text-xs.bg-green-500.text-white.absolute.top-10.left-0.rounded-r New
+        h4.text-sm.font-medium= product.title
+        p.text-xs.text-gray-400= product.caption
+        p.mt-2
+            span.text-base.font-bold.text-gray-700.mr-2= `$ ${product.price}`
+            span.text-sm.font-medium.line-through.text-gray-400=  `$ ${product.original}`
+            span.text-xs.font-medium.text-green-600.text-right.inline-block.ml-4 Flat 50% off
+        button#product-btn.w-full.rounded-sm.my-2.text-xs.p-2.px-4.bg-green-400.text-white(data-id= product.id,data-photo= product.photo,data-title= product.title, data-price=product.price)
+            | Add to cart   
+

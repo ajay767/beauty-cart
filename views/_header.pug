@@ -1,0 +1,17 @@
+.border-b.border-gray-100.mb-10
+  header.p-4.flex.items-center.mx-auto(class='w-10/12')
+    h1.text-lg.font-bold.flex-grow
+      a(href="/")
+        | Beauty 
+        span.text-yellow-500 Cart
+    .flex.w-96.items-center.justify-between.text-gray-600
+
+      a(href="/")
+        p.text-sm.mr-4 Home
+      p.text-sm.mr-4 Products
+      p.text-sm.mr-4 Contact us
+      p.text-sm.mr-4 About us
+      .relative
+        a(href=`/checkout`)
+          span#cart-bag.h-4.w-4.rounded-full.bg-red-500.text-white.text-xs.flex.items-center.justify-center.absolute.-top-2.-right-2 0
+          img.w-5(src='/images/bag.png' alt='cart')

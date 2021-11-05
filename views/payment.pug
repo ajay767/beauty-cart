@@ -1,0 +1,87 @@
+include _summaryProductCard
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
+        link(rel="stylesheet", href="/styles/style.css")
+        title Document
+    body 
+        include _header
+        .mx-auto.py-4(class='w-10/12')
+            a(href="/checkout")
+                p.text-sm.text-gray-500.flex.items-center
+                    img.w-4.mr-2(src='/images/back.png')
+                    |  Back to cart
+            .mt-10.grid.grid-cols-10.gap-4.items-start.container-checkout
+                .col-span-6.h-full.overflow-y-auto.scrollbar-hide
+                    p.flex.items-center
+                        span.h-7.w-7.text-sm.rounded-full.bg-gray-800.text-white.flex.items-center.justify-center.mr-2 2
+                        |             Payment
+                    .grid.grid-cols-2.gap-4.my-4.p-4
+                        .flex.flex-col.justify-start.col-span-full
+                            label#fullName-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between Card Holder Name
+                            input#fullName-input.rounded-md.p-2.ring-1.ring-gray-400(type='text')
+                        .flex.flex-col.justify-start
+                            label#cardNumber-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between Card Number
+                            input#cardNumber-input.rounded-md.p-2.ring-1.ring-gray-400(type='text')
+                        .flex.flex-col.justify-start
+                            label#expiryDate-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between Expiry Date
+                            input#expiryDate-input.rounded-md.p-2.ring-1.ring-gray-400(type='text')
+                        .flex.flex-col.justify-start
+                            label#cvv-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between CVV
+                            input#cvv-input.rounded-md.p-2.ring-1.ring-gray-400(type='text')
+                        button#payment-button.mt-10.p-4.col-span-full.rounded-md.text-white.w-full.text-sm.bg-green-600.text-center(data-order= orderId)
+                            | Place Order
+                .col-span-4.bg-gray-50.ring-1.ring-gray-100.w-full.rounded-md.p-4.my-4.h-max
+                    div
+                        p.text-sm.text-gray-800.font-medium.mb-4 Order summary
+                        #summary-cart-items
+                            each item in data.cart 
+                                +summaryProductCard(item)
+                            .mt-4
+                                p.text-base.text-gray-800.mb-2
+                                    | Invoice Details
+                                div
+                                    .grid.grid-cols-2.text-sm.text-gray-800
+                                        span Total Amount
+                                        span.font-bold.text-right= data.totalAmount
+                                    .grid.grid-cols-2.text-sm.text-gray-800
+                                        span Service &amp; Tax Fee
+                                        span.font-bold.text-right= data.totalTax
+                                    hr.border-dashed.border-gray-500.my-2
+                                    .grid.grid-cols-2.mb-2.text-sm.text-gray-800
+                                        span Payble amount
+                                        span.font-bold.text-right= data.totalPayble
+                            .mb-4
+                                p.text-base.text-gray-800.mb-2 Bill To
+                                .grid.grid-cols-2.text-sm.text-gray-800
+                                    span Name
+                                    span.font-medium.text-right= data.user.name
+                                .grid.grid-cols-2.text-sm.text-gray-800
+                                    span Email
+                                    span.font-medium.text-right= data.user.email
+                                .grid.grid-cols-2.text-sm.text-gray-800
+                                    span Mobile
+                                    span.font-medium.text-right= data.user.mobile
+                                .grid.grid-cols-2.text-sm.text-gray-800
+                                    span Address
+                                    span.font-medium.text-right= data.user.address
+                                .grid.grid-cols-2.text-sm.text-gray-800
+                                    span city
+                                    span.font-medium.text-right= data.user.city
+                                .grid.grid-cols-2.text-sm.text-gray-800
+                                    span Province
+                                    span.font-medium.text-right= data.user.province
+                        .my-4
+                            p.text-sm.text-gray-700 About Delivery Partner
+                            p.text-xs.text-gray-500
+                                | Lorem Ipsum is simply dummy text of the printing and typesetting
+                                | industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+                                | ever
+
+        include _footer
+        include _script

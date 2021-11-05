@@ -1,0 +1,82 @@
+include _checkoutProductCard
+
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./styles/style.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
+        title Document
+    body 
+        include _header
+
+        .mx-auto.py-4(class='w-10/12')
+            a(href="/")
+                p.text-sm.text-gray-500.flex.items-center
+                    img.w-4.mr-2(src='/images/back.png')
+                    |         Back to products
+            .mt-10.grid.grid-cols-10.gap-4.items-start.container-checkout
+                .col-span-6.h-full.overflow-y-auto.scrollbar-hide
+                    p.flex.items-center
+                        span.h-7.w-7.text-sm.rounded-full.bg-gray-800.text-white.flex.items-center.justify-center.mr-2 1
+                        |             Personal Details
+                    .p-4.my-4.grid.grid-cols-2.gap-4
+                        .flex.flex-col.justify-start
+                            label#firstName-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between First Name
+                            input#firstName-input.rounded-md.p-2.ring-1.ring-gray-400(type='text' class='focus:ring-2 focus:ring-blue-500')
+                        .flex.flex-col.justify-start
+                            label#lastName-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between
+                                | Last Name
+                                
+                            input#lastName-input.rounded-md.p-2.ring-1.ring-gray-400(type='text')
+                        .flex.flex-col.justify-start
+                            label#mobile-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between Mobile
+                            input#mobile-input.rounded-md.p-2.ring-1.ring-gray-400(type='tel')
+                        .flex.flex-col.justify-start
+                            label#email-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between Email
+                            input#email-input.rounded-md.p-2.ring-1.ring-gray-400(type='email')
+                        .flex.flex-col.justify-start.col-span-full
+                            label#address-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between Address
+                            textarea#address-input.rounded-md.p-2.ring-1.ring-gray-400(type='text')
+                        .flex.flex-col.justify-start
+                            label#city-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between City
+                            input#city-input.rounded-md.p-2.ring-1.ring-gray-400(type='text')
+                        .flex.flex-col.justify-start
+                            label#province-label.text-sm.mb-2.text-gray-500.flex.items-center.justify-between Province
+                            input#province-input.rounded-md.p-2.ring-1.ring-gray-400(type='text',list="provinces")
+                            datalist#provinces
+                                option(value="Alberta")
+                                option(value="British Columbia")
+                                option(value="Manitoba")
+                                option(value="New Brunswick")
+                                option(value="Newfoundland and Labrador")
+                                option(value="Northwest Territories")
+                                option(value="Nova Scotia")
+                                option(value="Nunavut")
+                                option(value="Ontario")
+                                option(value="Prince Edward Island")
+                                option(value="Quebec")
+                                option(value="Saskatchewan")
+                                option(value="Yukon")
+                        button#place-order-button.mt-10.p-4.col-span-full.rounded-md.text-white.w-full.text-sm.bg-green-600.text-center
+                            | Proceed to payment
+                .col-span-4.bg-gray-50.ring-1.ring-gray-100.w-full.rounded-md.p-4.my-4.h-max
+                    div
+                        p.text-sm.text-gray-800.font-medium.mb-4 Order summary
+                        #cart-items
+                            .flex.items-center.justify-center.p-10.w-full.flex-col
+                                img.h-8.w-8(src="/images/empty-cart.png")
+                                p.text-base.mt-2 Your cart is empty!!
+                           
+                        .my-4
+                            p.text-sm.text-gray-700 About Delivery Partner
+                            p.text-xs.text-gray-500
+                                | Lorem Ipsum is simply dummy text of the printing and typesetting
+                                | industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+                                | ever
+
+        include _footer
+        include _script

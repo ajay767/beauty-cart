@@ -1,0 +1,8 @@
+mixin summaryProductCard(item)
+    .flex.items-start.mb-3
+        img.h-20.w-20.object-cover.rounded-md(src=`${item.photo}`)
+        .ml-4
+            h2.text-sm.font-medium.text-gray-700= item.title
+            p.text-gray-500.flex.items-center.justify-between.w-20
+                .text-sm= `Quantity ${item.quantity}`
+            p.text-sm.font-bold.text-gray-700= `$ ${item.price}`

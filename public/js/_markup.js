@@ -20,3 +20,8 @@ export const _cartmarkup = `
               </p>
             </div>
         </div>`;
+
+export const _alertmarkup = `
+    <div id="alert-box" class="animate__animated animate__slideInUp animate__faster rounded-md fixed bottom-5 right-5 border-l-8 border-%COLOR%-500 bg-gray-800 text-white p-10 py-5">
+      <p class="text-sm">%MESSAGE%</p>
+    </div>`;

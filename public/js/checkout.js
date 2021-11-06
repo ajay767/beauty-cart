@@ -41,7 +41,7 @@ if (checkoutBtn) {
     const request = { user: formData, cart: cartData.cart };
 
     const res = await axios.post("/checkout", request);
-    console.log(res.data);
+
     if (!res.data.status) {
       const error = res.data.error;
       clearErrorNotification();
